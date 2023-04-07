@@ -1,0 +1,396 @@
+:root {
+    --bb-color: #18191A;
+    /* --danger-color: #f93c47; */
+    --danger-color: #04BFAD;
+    --text-color: rgba(255,255,255,0.5);
+    --border-color:rgba(255,255,255,0.5);
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    background: var(--bb-color);
+    font-family: "Poppins", sans-serif ;
+    cursor: pointer;
+}
+
+ul {
+    list-style: none;
+
+}
+
+a {
+    text-decoration: none;
+}
+
+img {
+    max-width: 300px;
+}
+
+.container {
+    max-width: 1280px;
+    margin: 0px auto;
+}
+
+header {
+    width: 100%;
+} 
+
+header .container {
+    min-height: 735px;
+    background: linear-gradient(0deg, rgba(0,0,0,0.94), rgba(0,0,0,0.94)), url("./assets/images/banner.svg");
+} 
+
+nav {
+    position: fixed;
+    min-height: 80px;
+    width: 100%;
+    /* border: 1px solid red; */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: black;
+    padding: 0px 30px;
+    top: 0px;
+    left: 0px;
+    z-index: 1;
+}
+
+nav .menu {
+    display: flex;
+    gap: 35px;
+}
+
+nav .menu a {
+    color: #fff;
+    transition: 0.3s all;
+}
+
+nav .menu .item:hover a {
+    color: rgb(163,  156, 156);
+    transition: 0.3s all;
+}
+
+nav .open-menu {
+    /* được hiển thị khi man hình nhỏ */
+    color: #fff;
+    font-size: 35px;
+    display: none;
+}
+
+nav .responsive-menu {
+    position: absolute;
+    background: rgb(2, 1, 4);
+    width: 100%;
+    /* border: 1px solid red; */
+    left: 0px;
+    top: 0px;
+    padding: 20px;
+    display: none;
+}
+
+nav .responsive-menu .item{ 
+    height: 70px;
+    text-align: center;
+}
+
+nav .responsive-menu a { 
+    color: #fff;
+    transition: 0.2s all;
+}
+
+nav .responsive-menu .item:hover a { 
+    color: #fff;
+    color: rgb(163, 156, 156);
+}
+
+nav .responsive-menu .close-responsive-menu {
+    position: absolute;
+    color: #fff;
+    right: 20px;
+    font-size: 25px;
+}
+
+/* intro css */
+.intro {
+    padding-top: 100px;
+}
+
+.intro .avatar {
+    position: relative;
+    width: 178px;
+    height: 178px;
+    border-radius: 50%;
+    border: 10px solid var(--danger-color);
+    margin: 0px auto;
+    margin-top: 80px;
+}
+
+.intro .avatar .ava {
+    max-width: 158px;
+    border-top-right-radius: 50%;
+    border-bottom-left-radius: 50%;
+    border-top-left-radius: 50%;
+}
+
+.intro .avatar:before {
+    content: "";
+    width: 150%;
+    height: 150%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    border: 3px solid var(--danger-color);
+    border-radius: 50%;
+    animation: anime 2s linear infinite ;
+}
+
+@keyframes anime {
+    0%{
+        width: 100%;
+        height: 100%;
+    }
+
+    100% {
+        width: 200%;
+        height: 200%;
+        opacity: 0;
+    }
+}
+
+.intro .name {
+    text-align: center;
+    color: #fff;
+    margin-top: 100px;
+}
+
+.intro .desc {
+    text-align: center;
+    color: var(--text-color);
+}
+
+/* class dùng chung */
+
+.btn-danger {
+    background: var(--danger-color);
+    border-radius: 5px;
+    width: 155px;
+    height: 55px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-weight: bold;
+    border: none;
+    outline: none;
+}
+
+.intro .btn-danger {
+    margin: 0px auto;
+    margin-top: 55px;
+}
+
+/* class dung chung */
+
+.section-title {
+    text-align: center;
+    margin-top: 62px;
+    font-size: 24px;
+    color: #fff;
+    font-weight: bold;
+    position: relative;
+
+}
+
+.section-title:before {
+    content: "";
+    position: absolute;
+    width: 20px;
+    height: 6px;
+    background: var(--danger-color);
+    bottom: -10px;
+    transition: 0.5s all;
+}
+
+.section-title:hover:before {
+    width: 100px;
+    
+}
+
+/* About */
+
+#about .container {
+    min-height: 400px;
+    padding: 0px 100px;
+    /* background: var(--bb-color); */
+} 
+
+#about .desc {
+    color: var(--text-color);
+    margin-top: 30px;
+    text-align: center;
+}
+
+.info {
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    align-items: center;
+    margin-top: 40px;
+    color: #fff;
+    
+}
+
+.box-right {
+    gap: 20px;
+    display: flex;
+    flex-direction: column;
+    color: var(--text-color);
+}
+
+.box-right span {
+    color: var(--danger-color);
+}
+
+.box-right .btn-danger {
+    margin: 0px;
+    width: 100px;
+    height: 35px;
+}
+
+/* Skill CSS */
+
+#skills .container {
+    margin-top: 100px;
+    min-height: 400px;
+    /* border: 1px solid red; */
+    padding-bottom: 20px;
+    /* background: var(--bb-color); */
+}
+
+
+.skill {
+    width: 50%;
+    margin: 0px auto;
+    margin-top: 30px;
+}
+
+.skill h3 {
+    color: #fff;
+}
+
+.skill .process-bar {
+    width: 100%;
+    height: 15px;
+    border-radius: 20px;
+    margin-top: 10px;
+    background: #fff;
+}
+
+.skill .process {
+width: 80%;
+height: 100%;
+background: var(--danger-color);
+border-radius: 20px;
+}
+
+.skill:nth-child(2) .process {
+    width: 70%;
+}
+
+.skill:nth-child(3) .process {
+    width: 60%;
+}
+
+.skill:nth-child(4) .process {
+    width: 60%;
+}
+
+.skill:nth-child(5) .process {
+    width: 70%;
+}
+
+.skill:nth-child(6) .process {
+    width: 70%;
+}
+
+/* Projects Css */
+
+#projects .container {
+    padding: 0px 100px;
+    
+}
+
+.projects {
+    margin-top: 50px;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 50px;
+}
+
+.projects .item {
+    margin-bottom: 30px;
+    color: #fff;
+}
+
+.projects .item .name {
+    margin-top: 20px;
+}
+
+.projects .item .desc {
+    margin: 10px 0px;
+    max-width: 90%;
+    color: var(--text-color);
+}
+
+
+.projects .item .btn-danger {
+    width: 100px;
+    height: 40px;
+    margin: 0px;
+}
+
+/* Contact CSS */
+
+#contact .container {
+    padding: 0px 100px;
+}
+
+.form-contact {
+    display: flex;
+    flex-direction: column;
+    margin-top: 100px;
+}
+
+.form-contact input {
+    width: 70%;
+    height: 50px;
+    background: transparent;
+    border: none;
+    outline: none;
+    border-bottom: 1px solid var(--border-color);
+    margin-top: 40px;
+    margin-bottom: 40px;
+    color: var(--text-color);
+}
+
+.form-contact textarea {
+    background: transparent;
+    border: 1px solid var(--border-color);
+    resize: none;
+    padding: 10px;
+    color: var(--text-color);
+    outline: none;
+}
+
+.form-contact .btn-danger {
+    width: 100px;
+    height: 40px;
+    margin: 10px 0px;
+}
+
